@@ -13,11 +13,13 @@ export default function IndexPage() {
   return (
     <Layout>
       <Head>
-        <title>The Cat</title>
+      <title>The Information Blog</title>
+      
       </Head>
-      <h1>The Cat (AMP-first Page)</h1>
-      <Byline author="Dan Zajdband" />
-      <p className="caption">Meowwwwwwww</p>
+      <h1>The Info Blog</h1>
+      <Byline author="Info Blog" />
+      <p className="caption">Infomation</p>
+
       <amp-img
         alt="Mountains"
         width="550"
@@ -34,9 +36,10 @@ export default function IndexPage() {
           src="https://amp.dev/static/inline-examples/images/mountains.jpg"
         ></amp-img>
       </amp-img>
+
       <p>
-        Cat ipsum dolor <a href={isAmp ? '/dog?amp=1' : '/dog'}>sit amet</a>,
-        eat grass, throw it back up but refuse to leave cardboard box or groom
+        Our info <a href={isAmp ? '/dog?amp=1' : '/dog'}>Blog</a>,
+        eat mega bytes, throw it back up but refuse to leave cardboard box or groom
         yourself 4 hours - checked, have your beauty sleep 18 hours - checked,
         be fabulous for the rest of the day - checked!. Hide from vacuum
         cleaner. Chirp at birds chew foot chase the pig around the house and
