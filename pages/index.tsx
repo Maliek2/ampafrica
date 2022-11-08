@@ -18,7 +18,7 @@ export default function IndexPage() {
       </Head>
       <h1>The Info Blog</h1>
       <Byline author="Info Blog" />
-      <p className="caption">Infomation</p>
+      <p className="caption">Infomation News</p>
 
       <amp-img
         alt="Mountains"
