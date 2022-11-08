@@ -1,94 +1,228 @@
-import Head from 'next/head'
-import { useAmp } from 'next/amp'
-import Byline from '../components/Byline'
+import { NextPage, GetServerSideProps } from 'next'
+import Layout from '../components/Layout'
+import AmpState from '../components/amp/AmpState'
+import AmpScript from '../components/amp/AmpScript'
+import {
+  AmpIncludeAmpList,
+  AmpIncludeAmpCarousel,
+} from '../components/amp/AmpCustomElement'
 
-export const config = {
-  amp: 'hybrid',
+export const config = { amp: true }
+
+type HomeProps = {
+  host: string
 }
 
-export default function BlogPage() {
-  const isAmp = useAmp()
+const Home: NextPage<HomeProps> = (props) => (
+  <>
+    <Layout
+      title="Welcome to AMP"
+      description="Learn how to build an AMP First with Next.js."
+    >
+      <main>
+        <h1 className="title">Maliek News to AMP ⚡</h1>
+        <p className="description">
+          To get started, edit <code>pages/index.js</code> and save to reload.
+        </p>
 
-  return (
-    <div>
-      <Head>
-        <title>The Information Blog</title>
-      </Head>
-      <h1>The Blog News</h1>
-      <Byline author="Maliek Galant" />
-      <p>
-        <a href={isAmp ? '/blog' : '/blog?amp=1'}>
-          {isAmp ? 'View Non-AMP' : 'View AMP'} Version
-        </a>
-      </p>
-      <p className="caption">Infomation Blog</p>
-      <p>
-        Wafer donut candy soufflé{' '}
-        <a href={isAmp ? '/normal?amp=1' : '/'}>Information</a> icing. Marzipan gummi
-        bears pie danish lollipop pudding powder gummi bears sweet. Pie sweet
-        roll sweet roll topping chocolate bar dragée pudding chocolate cake.
-        Croissant sweet chocolate bar cheesecake candy canes. Tootsie roll icing
-        macaroon bonbon cupcake apple pie candy canes biscuit candy canes.
-        Jujubes jelly liquorice toffee gingerbread. Candy tootsie roll macaroon
-        chocolate bar icing sugar plum pie. Icing gummies chocolate bar
-        chocolate marzipan bonbon cookie chocolate tart. Caramels danish halvah
-        croissant. Cheesecake cookie tootsie roll ice cream. Powder dessert
-        carrot cake muffin tiramisu lemon drops liquorice topping brownie.
-        Soufflé chocolate cake croissant cupcake jelly.
-      </p>
-      <p>
-        Muffin gummies dessert cheesecake candy canes. Candy canes danish cotton
-        candy tart dessert powder bear claw marshmallow. Muffin chocolate
-        marshmallow danish. Chocolate bar biscuit cake tiramisu. Topping sweet
-        brownie jujubes powder marzipan. Croissant wafer bonbon chupa chups cake
-        cake marzipan caramels jujubes. Cupcake cheesecake sweet roll
-        marshmallow lollipop danish jujubes jelly icing. Apple pie chupa chups
-        lollipop jelly-o cheesecake jelly beans cake dessert. Tootsie roll
-        tootsie roll bonbon pastry croissant gummi bears cake cake. Fruitcake
-        sugar plum halvah gingerbread cookie pastry chupa chups wafer lemon
-        drops. Marshmallow liquorice oat cake lollipop. Lemon drops oat cake
-        halvah liquorice danish powder cupcake soufflé. Cake tart topping
-        jelly-o tart sugar plum. Chocolate bar cookie wafer tootsie roll candy
-        cotton candy toffee pie donut.
-      </p>
-      <p>
-        Ice cream lollipop marshmallow tiramisu jujubes croissant. Bear claw
-        lemon drops marzipan candy bonbon cupcake powder. Candy canes cheesecake
-        bear claw pastry cake donut jujubes. Icing tart jelly-o soufflé bonbon
-        apple pie. Cheesecake pie chupa chups toffee powder. Bonbon lemon drops
-        carrot cake pudding candy halvah cheesecake lollipop cupcake. Pudding
-        marshmallow fruitcake. Gummi bears bonbon chupa chups lemon drops. Wafer
-        dessert gummies gummi bears biscuit donut tiramisu gummi bears brownie.
-        Tootsie roll liquorice bonbon cookie. Sesame snaps chocolate bar cake
-        croissant chupa chups cheesecake gingerbread tiramisu jelly. Cheesecake
-        ice cream muffin lollipop gummies. Sesame snaps jelly beans sweet bear
-        claw tart.
-      </p>
-      <p>
-        Sweet topping chupa chups chocolate cake jelly-o liquorice danish.
-        Pastry jelly beans apple pie dessert pastry lemon drops marzipan
-        gummies. Jelly beans macaroon bear claw cotton candy. Toffee sweet
-        lollipop toffee oat cake. Jelly-o oat cake fruitcake chocolate bar
-        sweet. Lemon drops gummies chocolate cake lollipop bear claw croissant
-        danish icing. Chocolate bar donut brownie chocolate cake lemon drops
-        chocolate bar. Cake fruitcake pudding chocolate apple pie. Brownie
-        tiramisu chocolate macaroon lemon drops wafer soufflé jujubes icing.
-        Cheesecake tiramisu cake macaroon tart lollipop donut. Gummi bears
-        dragée pudding bear claw. Muffin cake cupcake candy canes. Soufflé candy
-        canes biscuit. Macaroon gummies danish.
-      </p>
-      <p>
-        Cupcake cupcake tart. Cotton candy danish candy canes oat cake ice cream
-        candy canes powder wafer. Chocolate sesame snaps oat cake dragée
-        cheesecake. Sesame snaps marshmallow topping liquorice cookie
-        marshmallow. Liquorice pudding chocolate bar. Cake powder brownie
-        fruitcake. Carrot cake dessert marzipan sugar plum cupcake cheesecake
-        pastry. Apple pie macaroon ice cream fruitcake apple pie cookie. Tootsie
-        roll ice cream oat cake cheesecake donut cheesecake bear claw. Sesame
-        snaps marzipan jelly beans chocolate tootsie roll. Chocolate bar donut
-        dragée ice cream biscuit. Pie candy canes muffin candy canes ice cream
-        tiramisu.
-      </p>
-    </div>
-  )
+        <section className="hero">
+          <a href="/learn/basics/getting-started">
+            <h3>Getting Started</h3>
+            <p>Learn more about Next</p>
+          </a>
+          <a href="/docs/advanced-features/amp-support/introduction">
+            <h3>AMP Support in News</h3>
+            <p>Learn how to build AMP sites with Next.js</p>
+          </a>
+          <a href="/components/?format=websites">
+            <h3>Components</h3>
+            <p>See which components are available.</p>
+          </a>
+        </section>
+        <section className="hero">
+          <a href="/learn/basics/getting-started">
+            <h3>Getting News</h3>
+            <p>Learn more about Next</p>
+          </a>
+          <a href="/docs/advanced-features/amp-support/introduction">
+            <h3>AMP Support</h3>
+            <p>Learn how to build AMP sites with Next.js</p>
+          </a>
+          <a href="/components/?format=websites">
+            <h3>AMP Components</h3>
+            <p>See which components are available.</p>
+          </a>
+        </section>
+
+        <section>
+          <h1>Using Components</h1>
+          <p>
+            You can import AMP components using <code>next/head</code>. Checkout{' '}
+            <code>components/amp/AmpCustomElement</code> for a simple way to
+            import AMP components. Once the component is imported, you can use
+            it like any other HTML element.
+          </p>
+          <AmpIncludeAmpCarousel />
+          <amp-carousel
+            type="slides"
+            width="800"
+            height="300"
+            layout="responsive"
+          >
+            <amp-img
+              src="https://unsplash.it/800/300?id=123"
+              layout="fill"
+              alt="demo image"
+            />
+            <amp-img
+              src="https://unsplash.it/800/300?id=124"
+              layout="fill"
+              alt="demo image"
+            />
+            <amp-img
+              src="https://unsplash.it/800/300?id=125"
+              layout="fill"
+              alt="demo image"
+            />
+          </amp-carousel>
+        </section>
+
+        <section>
+          <h1>Maliek Pages Cpt</h1>
+          <p>
+            It's no problem to use <code>amp-bind</code> and{' '}
+            <code>amp-state</code> with Next.js. There are two things to be
+            aware of:
+            <ol>
+              <li>
+                The <code>[...]</code> binding syntax{' '}
+                <code>[text]="myStateVariable"</code>is not supported in JSX.
+                Use <code>data-amp-bind-text="myStateVariable"</code> instead.
+              </li>
+              <li>
+                Initializing <code>amp-state</code> via JSON string is not
+                supported in JSX:
+                
+                Instead you need to use <code>dangerouslySetInnerHTML</code> to
+                initialize the string. can use the{' '}
+                <code>/components/amp/AmpState.js</code> component to see how it
+                works. The same approach works for <code>amp-access</code> and{' '}
+                <code>amp-consent</code> as well
+              </li>
+            </ol>
+           
+          </p>
+
+          
+          
+        
+        </section>
+
+        <section>
+          <h1>Subscribe Now</h1>
+          <p>
+            Mustache templates conflict with JSX and it's template literals need
+            to be escaped. A simple approach is to escape them via back ticks:{' '}
+            <code>src=&#123;`&#123;&#123;imageUrl&#125;&#125;`&#125;</code>.
+          </p>
+
+          <AmpIncludeAmpList />
+          <amp-list
+            src="/examples/api/photo-stream"
+            layout="fixed-height"
+            height="64"
+            binding="no"
+          >
+            <template type="amp-mustache">
+              <amp-img
+                src={`{{imageUrl}}`}
+                width="64"
+                height="64"
+                alt="demo image"
+              />
+            </template>
+          </amp-list>
+        </section>
+
+        <section>
+          <h1>Maliek News</h1>
+          <p>
+            Checkout the{' '}
+            <a href="/components/amp-script/">
+              Amp-Script
+            </a>{' '}
+            helper here: <code>components/amp/AmpScript.js</code> for embedding
+            custom JavaScript.
+          </p>
+
+          
+
+          
+          
+        </section>
+      </main>
+    </Layout>
+    <style jsx>{`
+      code,
+      pre {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
+          Courier, monospace;
+        background: #f2f2f2;
+        padding: 2px 3px;
+        font-size: 13px;
+      }
+      main {
+        margin: 0 auto;
+        max-width: 800px;
+      }
+      main > * + * {
+        margin: 4rem 0.5rem;
+      }
+      .title {
+        text-align: center;
+        padding-top: 4rem;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 1rem;
+      }
+      .hero > a {
+        display: block;
+        padding: 1rem;
+        text-align: left;
+        text-decoration: none;
+        background-color: #005af0;
+      }
+      .hero h3 {
+        margin: 0;
+        color: #067df7;
+        color: #fff;
+      }
+      .hero p {
+        margin: 0;
+        color: #fff;
+      }
+    `}</style>
+  </>
+)
+
+// amp-script requires absolute URLs, so we create a property `host` which we can use to calculate the script URL.
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const getProtocol = (req: any) => {
+    if (req.connection.encrypted) {
+      return 'https'
+    }
+    const forwardedProto = req.headers['x-forwarded-proto']
+    if (forwardedProto) {
+      return forwardedProto.split(/\s*,\s*/)[0]
+    }
+    return 'http'
+  }
+
+  // WARNING: This is a generally unsafe application unless you're deploying to a managed platform like Vercel.
+  // Be sure your load balancer is configured to not allow spoofed host headers.
+  return { props: { host: `${getProtocol(req)}://${req.headers.host}` } }
 }
+
+export default Home
