@@ -14,7 +14,9 @@ export default function IndexPage() {
     <Layout>
       <Head>
       <title>The Information Blog</title>
-      
+      <script async custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6607653375286321"
+     crossorigin="anonymous"></script>
       </Head>
       <h1>The Info Blog</h1>
       <Byline author="Info Blog" />
@@ -36,7 +38,7 @@ export default function IndexPage() {
           src="https://images.unsplash.com/photo-1667493620964-5db1a9529f14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8Q0R3dXdYSkFiRXd8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
         ></amp-img>
       </amp-img>
-
+      
       <p>
         Our info <a href={isAmp ? '/blog?amp=1' : '/blog'}>Blog</a>,
         eat mega bytes, throw it back up but refuse to leave cardboard box or groom
