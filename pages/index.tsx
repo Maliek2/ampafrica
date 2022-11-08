@@ -38,7 +38,7 @@ export default function IndexPage() {
       </amp-img>
 
       <p>
-        Our info <a href={isAmp ? '/normal?amp=1' : '/normal'}>Info to </a>,
+        Our info <a href={isAmp ? '/blog?amp=1' : '/blog'}>Blog</a>,
         eat mega bytes, throw it back up but refuse to leave cardboard box or groom
         yourself 4 hours - checked, have your beauty sleep 18 hours - checked,
         be fabulous for the rest of the day - checked!. Hide from vacuum
