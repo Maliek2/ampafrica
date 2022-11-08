@@ -25,7 +25,7 @@ export default function IndexPage() {
         width="550"
         height="368"
         layout="responsive"
-        src="https://amp.dev/static/inline-examples/images/mountains.webp"
+        src="https://images.unsplash.com/photo-1667115309281-d6cd9ba57f62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
       >
         <amp-img
           alt="Mountains"
@@ -33,7 +33,7 @@ export default function IndexPage() {
           width="550"
           height="368"
           layout="responsive"
-          src="https://amp.dev/static/inline-examples/images/mountains.jpg"
+          src="https://images.unsplash.com/photo-1667115309281-d6cd9ba57f62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
         ></amp-img>
       </amp-img>
 
