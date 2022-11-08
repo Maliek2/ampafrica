@@ -17,7 +17,7 @@ export default function BlogPage() {
       <h1>The Blog News</h1>
       <Byline author="Maliek Galant" />
       <p>
-        <a href={isAmp ? '/dog' : '/dog?amp=1'}>
+        <a href={isAmp ? '/normal' : '/normal?amp=1'}>
           {isAmp ? 'View Non-AMP' : 'View AMP'} Version
         </a>
       </p>
