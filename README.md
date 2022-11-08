@@ -25,4 +25,6 @@ pnpm create next-app --example amp amp-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-[BLOG](https://www.google.co.za/amp/www.adball.online/)
+
+
+([BLOG](https://www.google.co.za/amp/www.adball.online/))
