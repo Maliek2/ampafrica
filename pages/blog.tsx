@@ -17,14 +17,14 @@ export default function BlogPage() {
       <h1>The Blog News</h1>
       <Byline author="Maliek Galant" />
       <p>
-        <a href={isAmp ? '/normal' : '/normal?amp=1'}>
+        <a href={isAmp ? '/blog' : '/blog?amp=1'}>
           {isAmp ? 'View Non-AMP' : 'View AMP'} Version
         </a>
       </p>
       <p className="caption">Infomation Blog</p>
       <p>
         Wafer donut candy soufflé{' '}
-        <a href={isAmp ? '/?amp=1' : '/'}>Information</a> icing. Marzipan gummi
+        <a href={isAmp ? '/normal?amp=1' : '/'}>Information</a> icing. Marzipan gummi
         bears pie danish lollipop pudding powder gummi bears sweet. Pie sweet
         roll sweet roll topping chocolate bar dragée pudding chocolate cake.
         Croissant sweet chocolate bar cheesecake candy canes. Tootsie roll icing
